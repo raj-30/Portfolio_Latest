@@ -20,8 +20,8 @@ const ProjectsCarousel = () => {
 
     const columns = Math.ceil(PROJECTS.length / 2);
     
-    // Fixed angular step for consistent spacing between projects
-    const angleStep = Math.PI / 8;
+    // Fixed angular step for consistent spacing between projects (increased for better gaps)
+    const angleStep = Math.PI / 5;
     // Calculate starting angle to perfectly center the group of projects around Math.PI / 2 (straight ahead)
     const startAngle = (Math.PI / 2) - ((columns - 1) * angleStep) / 2;
 
