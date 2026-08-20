@@ -66,8 +66,7 @@ jobs:
           static_site_generator: next
       - name: Determine site URL
         run: |
-          echo "rajgajjar.in" > public/CNAME
-          echo "NEXT_PUBLIC_SITE_URL=https://rajgajjar.in" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_SITE_URL=https://raj-30.github.io/Portfolio_Latest" >> $GITHUB_ENV
       - name: Restore cache
         uses: actions/cache@v4
         with:
