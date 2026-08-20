@@ -66,18 +66,8 @@ jobs:
           static_site_generator: next
       - name: Determine site URL
         run: |
-          if [ -n "${GH_PAGES_CUSTOM_DOMAIN:-}" ]; then
-            echo "$GH_PAGES_CUSTOM_DOMAIN" > public/CNAME
-            echo "NEXT_PUBLIC_SITE_URL=$GH_PAGES_CUSTOM_DOMAIN" >> $GITHUB_ENV
-          else
-            OWNER=${GITHUB_REPOSITORY_OWNER}
-            REPO=${GITHUB_REPOSITORY#*/}
-            if [ "$REPO" = "$OWNER.github.io" ]; then
-              echo "NEXT_PUBLIC_SITE_URL=https://$OWNER.github.io" >> $GITHUB_ENV
-            else
-              echo "NEXT_PUBLIC_SITE_URL=https://$OWNER.github.io/$REPO" >> $GITHUB_ENV
-            fi
-          fi
+          echo "rajgajjar.in" > public/CNAME
+          echo "NEXT_PUBLIC_SITE_URL=https://rajgajjar.in" >> $GITHUB_ENV
       - name: Restore cache
         uses: actions/cache@v4
         with:
