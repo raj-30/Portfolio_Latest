@@ -19,12 +19,17 @@ const ProjectsCarousel = () => {
     const distance = 10;
 
     const columns = Math.ceil(PROJECTS.length / 2);
+    
+    // Fixed angular step for consistent spacing between projects
+    const angleStep = Math.PI / 8;
+    // Calculate starting angle to perfectly center the group of projects around Math.PI / 2 (straight ahead)
+    const startAngle = (Math.PI / 2) - ((columns - 1) * angleStep) / 2;
 
     return PROJECTS.map((project, i) => {
       const row = i % 2; // 0 or 1
       const column = Math.floor(i / 2);
 
-      const angle = (fov / columns) * column;
+      const angle = startAngle + (column * angleStep);
 
       const z = -distance * Math.sin(angle);
       const x = -distance * Math.cos(angle);
