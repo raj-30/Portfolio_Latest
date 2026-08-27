@@ -1,4 +1,5 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
@@ -71,6 +72,7 @@ export default function RootLayout({
         className={`${soriaFont.variable} ${vercettiFont.variable} font-sans antialiased`}
       >
         {children}
+        <Analytics />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''}/>
     </html>
